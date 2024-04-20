@@ -1,0 +1,25 @@
+#titulo {
+    text-align: center;
+    border-bottom: 2px solid white;
+}
+
+#campoTexto {
+    margin: 2%;
+    font-weight: bold;
+}
+
+#Agregar {
+    margin-top: 20px;
+    --background:aquamarine;
+    border: 2px white dotted;
+    justify-content: center;
+}
+
+ion-button {
+    width: 50%;
+    margin: 25%;
+}
+
+#descripcion {
+    height: 30px;
+}

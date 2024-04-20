@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { Tarea1Component } from './tarea1.component';
+import { AgregarTareaComponent } from './agregar-tarea.component';
 
-describe('Tarea1Component', () => {
-  let component: Tarea1Component;
-  let fixture: ComponentFixture<Tarea1Component>;
+describe('AgregarTareaComponent', () => {
+  let component: AgregarTareaComponent;
+  let fixture: ComponentFixture<AgregarTareaComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ Tarea1Component ],
+      declarations: [ AgregarTareaComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Tarea1Component);
+    fixture = TestBed.createComponent(AgregarTareaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

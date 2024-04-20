@@ -1,0 +1,28 @@
+<div>
+  <div id="modal">
+    <div id="titulo">
+      <h1><strong>Agregar Tarea</strong></h1>
+    </div>
+  </div>
+  <div id="campoTexto">
+    <p>Nombre de la tarea:</p>
+    <ion-item>
+      <ion-input placeholder="Agregue el nombre de la tarea"></ion-input>
+    </ion-item>
+  </div>
+  <div id="campoTexto">
+    <p>Fecha estimada en la que se completará</p>
+    <ion-item>
+      <ion-input type="date"></ion-input>
+    </ion-item>    
+  </div>
+  <div id="campoTexto">
+    <p>Descripción</p>
+    <ion-item>
+      <ion-input placeholder="Agregue la descripción" id="descripción"></ion-input>
+    </ion-item>
+  </div>
+  <ion-button expand="block" id="Agregar" (click)="ConfirmarModal()">
+    Agregar
+  </ion-button>
+</div>

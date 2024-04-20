@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { ListaComponent } from '../lista/lista.component';
+import { TareaComponent } from '../tarea/tarea.component';
 
 @NgModule({
   imports: [
