@@ -4,40 +4,11 @@
   </div>
   
   <div id="tarjeta">
-    <ion-card>
+    <ion-card *ngFor="let tarea of tareas">
       <ion-card-header>
-        <ion-card-title>Llevar a Bruno al veterinario</ion-card-title>
-        <ion-card-subtitle><strong>Fecha</strong></ion-card-subtitle>
-        <p>01/05/24</p>
-      </ion-card-header>
-  
-      <div>
-        <ion-button>+ Ver más detalles</ion-button>
-      </div>
-    </ion-card>
-  </div>
-  
-  <div id="tarjeta">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Recordar tarea de Aplicaciones Moviles</ion-card-title>
-        <ion-card-subtitle><strong>Fecha</strong></ion-card-subtitle>
-        <p>02/05/24</p>
-      </ion-card-header>
-  
-      <div>
-        <ion-button>+ Ver más detalles</ion-button>
-      </div>
-    </ion-card>
-  </div>
-
-  <div *ngFor="let nuevaTarea of tareas" id="tarjeta">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>{{nuevaTarea.titulo}}</ion-card-title>
-        <ion-card-subtitle><strong>Fecha</strong></ion-card-subtitle>
-        <p>{{nuevaTarea.fecha}}</p>
-        <p>{{nuevaTarea.descripcion}}</p>
+        <ion-card-title>{{tarea.titulo}}</ion-card-title>
+        <ion-card-subtitle><strong>Fecha:</strong> {{tarea.fechaMes}}/{{tarea.fechaAnio}}</ion-card-subtitle>
+        <p>{{tarea.descripcion}}</p>
       </ion-card-header>
   
       <div>

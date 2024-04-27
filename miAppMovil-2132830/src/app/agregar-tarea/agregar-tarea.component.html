@@ -4,25 +4,53 @@
       <h1><strong>Agregar Tarea</strong></h1>
     </div>
   </div>
-  <div id="campoTexto">
-    <p>Nombre de la tarea:</p>
-    <ion-item>
-      <ion-input placeholder="Agregue el nombre de la tarea"></ion-input>
-    </ion-item>
-  </div>
-  <div id="campoTexto">
-    <p>Fecha estimada en la que se completará</p>
-    <ion-item>
-      <ion-input type="date"></ion-input>
-    </ion-item>    
-  </div>
-  <div id="campoTexto">
-    <p>Descripción</p>
-    <ion-item>
-      <ion-input placeholder="Agregue la descripción" id="descripción"></ion-input>
-    </ion-item>
-  </div>
-  <ion-button expand="block" id="Agregar" (click)="ConfirmarModal()">
-    Agregar
-  </ion-button>
+  <form #agregarTareaForm = "ngForm">
+    <div id="campoTexto">
+      <ion-label>Nombre de la tarea:</ion-label>
+      <ion-item>
+        <ion-input placeholder="Agregue el nombre de la tarea" required id = "nombre"
+        name="nombreTarea" [(ngModel)] = "nuevaTarea.titulo"></ion-input>
+      </ion-item>
+    </div>
+    <div id="campoTexto">
+      <p>Mes estimado en la que se completará</p>
+      <ion-select [(ngModel)] = "nuevaTarea.fechaMes" name="mesTarea">
+        <ion-select-option value="1">Enero</ion-select-option>
+        <ion-select-option value="2">Febrero</ion-select-option>
+        <ion-select-option value="3">Marzo</ion-select-option>
+        <ion-select-option value="4">Abril</ion-select-option>
+        <ion-select-option value="5">Mayo</ion-select-option>
+        <ion-select-option value="6">Junio</ion-select-option>
+        <ion-select-option value="7">Julio</ion-select-option>
+        <ion-select-option value="8">Agosto</ion-select-option>
+        <ion-select-option value="9">Septiembre</ion-select-option>
+        <ion-select-option value="10">Octubre</ion-select-option>
+        <ion-select-option value="11">Noviembre</ion-select-option>
+        <ion-select-option value="12">Diciembre</ion-select-option>
+      </ion-select>    
+    </div>
+    <div id="campoTexto">
+      <p>Año estimado en la que se completará</p>
+      <ion-select [(ngModel)] = "nuevaTarea.fechaAnio" name="anioTarea">
+        <ion-select-option value="2024">2024</ion-select-option>
+        <ion-select-option value="2025">2025</ion-select-option>
+        <ion-select-option value="2026">2026</ion-select-option>
+        <ion-select-option value="2027">2027</ion-select-option>
+        <ion-select-option value="2028">2028</ion-select-option>
+        <ion-select-option value="2029">2029</ion-select-option>
+        <ion-select-option value="2030">2030</ion-select-option>
+      </ion-select>    
+    </div>
+    <div id="campoTexto">
+      <p>Descripción</p>
+      <ion-item>
+        <ion-input placeholder="Agregue la descripción" id="descripción"
+        [(ngModel)] = "nuevaTarea.descripcion" name="descripcionTarea"></ion-input>
+      </ion-item>
+    </div>
+    <ion-button expand="block" id="Agregar" (click)="ConfirmarModal()" class="submit"
+    [disabled]="!agregarTareaForm.valid">
+      Agregar
+    </ion-button>
+  </form>
 </div>

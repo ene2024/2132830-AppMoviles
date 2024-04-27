@@ -1,5 +1,6 @@
 export interface Tarea {
     titulo: String,
-    fecha: Date,
+    fechaMes: number,
+    fechaAnio: number,
     descripcion: String;
 }

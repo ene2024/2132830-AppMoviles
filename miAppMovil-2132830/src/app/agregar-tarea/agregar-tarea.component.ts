@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Tarea } from 'src/tareas';
 
@@ -10,20 +10,20 @@ import { Tarea } from 'src/tareas';
 export class AgregarTareaComponent  implements OnInit {
 
   constructor(private modalController:ModalController) { }
-
+  
   ngOnInit() {}
 
-  tituloTarea: String = '';
-  fechaTarea: Date = new Date();
-  descripcionTarea: String = '';
+  nuevaTarea: Tarea = {
+    titulo: '',
+    fechaMes: 1,
+    fechaAnio: 1,
+    descripcion: ''
+  };
 
   ConfirmarModal() {
-    this.modalController.dismiss();
-    const nuevaTarea: Tarea = {
-      titulo: this.tituloTarea,
-      fecha: this.fechaTarea,
-      descripcion: this.descripcionTarea,
-    }
+    this.modalController.dismiss(this.nuevaTarea);
+    console.log("Accion completada", this.nuevaTarea);
+    /*this.tareas.push(this.nuevaTarea);*/
   }
 
 
