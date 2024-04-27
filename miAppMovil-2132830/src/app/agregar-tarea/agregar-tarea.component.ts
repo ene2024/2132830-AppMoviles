@@ -22,8 +22,6 @@ export class AgregarTareaComponent  implements OnInit {
 
   ConfirmarModal() {
     this.modalController.dismiss(this.nuevaTarea);
-    console.log("Accion completada", this.nuevaTarea);
-    /*this.tareas.push(this.nuevaTarea);*/
   }
 
 

@@ -4,15 +4,24 @@
   </div>
   
   <div id="tarjeta">
-    <ion-card *ngFor="let tarea of tareas">
+    <ion-card *ngFor="let tarea of tareaArray; let posicion = index" class="ion-margin">
       <ion-card-header>
         <ion-card-title>{{tarea.titulo}}</ion-card-title>
-        <ion-card-subtitle><strong>Fecha:</strong> {{tarea.fechaMes}}/{{tarea.fechaAnio}}</ion-card-subtitle>
-        <p>{{tarea.descripcion}}</p>
       </ion-card-header>
-  
+
+      <ion-accordion-group>
+        <ion-accordion>
+          <ion-item slot="header" color="red">
+            <ion-label color="danger"><strong>+ Ver más detalles</strong></ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <p><strong>Fecha:</strong> {{tarea.fechaMes}}/{{tarea.fechaAnio}}</p>
+            <p><strong>Descripción:</strong> {{tarea.descripcion}}</p>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
       <div>
-        <ion-button>+ Ver más detalles</ion-button>
+        <ion-button (click)="this.tareaServicio.deleteTarea(posicion)">Eliminar tarea</ion-button>
       </div>
     </ion-card>
   </div>

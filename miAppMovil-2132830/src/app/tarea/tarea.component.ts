@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { AgregarTareaComponent } from '../agregar-tarea/agregar-tarea.component';
 import { Tarea } from 'src/tareas';
+import { TareasService } from '../tareas.service';
 
 @Component({
   selector: 'app-tarea',
@@ -16,34 +17,23 @@ export class TareaComponent  implements OnInit {
     fechaAnio: 1,
     descripcion: ''
   }
-  tareas: Tarea[] = [
-    /*{
-      titulo: 'Llevar a Bruno al veterinario',
-      fechaMes: 5,
-      fechaAnio: 2024,
-      descripcion: 'LLevar al perro a las 10 am'
-    },
-    {
-      titulo: 'Recordar Tarea de Aplicaciones Moviles',
-      fechaMes: 5,
-      fechaAnio: 2024,
-      descripcion: 'Hacer tarea de comunicacion entre componentes'
-    }*/
-  ];
   
-  constructor(private modalController: ModalController) {}
+  constructor(private modalController: ModalController, public tareaServicio: TareasService) {}
+
+  tareaArray: Tarea[] = this.tareaServicio.tareas;
 
   async presentModal() {
     const modal = await this.modalController.create({
       component: AgregarTareaComponent,
     });
     modal.onDidDismiss().then((dataReturned) => {
-      this.ImprimirTarea = dataReturned.data;
-      console.log(this.ImprimirTarea);
-      this.tareas.push(this.ImprimirTarea);
+      if(dataReturned.data) {
+        this.ImprimirTarea = dataReturned.data; 
+        console.log(this.ImprimirTarea);
+        this.tareaServicio.agregarTarea(this.ImprimirTarea);
+      }
     });
     return await modal.present();
-  
   }
   ngOnInit() {}
 
