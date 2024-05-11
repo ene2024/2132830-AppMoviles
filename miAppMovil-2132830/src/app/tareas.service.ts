@@ -13,7 +13,7 @@ export class TareasService {
       titulo: 'Llevar a Bruno al veterinario',
       fechaMes: 5,
       fechaAnio: 2024,
-      descripcion: 'LLevar al perro a las 10 am'
+      descripcion: 'Llevar al perro a las 10 am'
     },
     {
       titulo: 'Recordar Tarea de Aplicaciones Moviles',
@@ -23,6 +23,10 @@ export class TareasService {
     }
   ];
 
+  getVistaDetalle(id: any) {
+    return this.tareas[id];
+  }
+  
   getTareas() {
     return this.tareas;
   }

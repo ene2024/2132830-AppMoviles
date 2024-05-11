@@ -9,9 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { TareaComponent } from './tarea/tarea.component';
 import { AgregarTareaComponent } from './agregar-tarea/agregar-tarea.component';
 import { FormsModule } from '@angular/forms';
+import { VistaDetalleComponent } from './vista-detalle/vista-detalle.component';
 
 @NgModule({
-  declarations: [AppComponent, TareaComponent, AgregarTareaComponent],
+  declarations: [AppComponent, TareaComponent, AgregarTareaComponent, VistaDetalleComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

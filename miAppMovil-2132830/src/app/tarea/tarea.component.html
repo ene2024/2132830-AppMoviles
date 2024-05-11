@@ -12,12 +12,8 @@
       <ion-accordion-group>
         <ion-accordion>
           <ion-item slot="header" color="red">
-            <ion-label color="danger"><strong>+ Ver más detalles</strong></ion-label>
+            <ion-label color="danger" [routerLink]="['/tarea', posicion]"><strong>+ Ver más detalles</strong></ion-label>
           </ion-item>
-          <div class="ion-padding" slot="content">
-            <p><strong>Fecha:</strong> {{tarea.fechaMes}}/{{tarea.fechaAnio}}</p>
-            <p><strong>Descripción:</strong> {{tarea.descripcion}}</p>
-          </div>
         </ion-accordion>
       </ion-accordion-group>
       <div>
